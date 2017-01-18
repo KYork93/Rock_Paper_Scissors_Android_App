@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RockPaperScissors</string>
+    <string name="main_screen_name">Rock Paper Scissors</string>
+    <string name="instruction">Click an option:</string>
+    <string name="rock_btn">ROCK</string>
+    <string name="paper_btn">PAPER</string>
+    <string name="scissor_btn">SCISSOR</string>
+</resources>
