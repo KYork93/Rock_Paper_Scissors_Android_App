@@ -9,9 +9,9 @@ import java.util.Random;
 
 public class Rules {
 
-    String playerChoice;
+    private String playerChoice;
     String randomGen;
-    ArrayList<String> options;
+    private ArrayList<String> options;
 
     public Rules(String playerChoice){
         this.playerChoice = playerChoice;
@@ -39,7 +39,7 @@ public class Rules {
         } else if (playerChoice == "paper" && randomGen == "scissors") {
             return "You lose!";
         } else
-            return "You broke";
+            return "You broke it";
     }
 
     private void setUp(){
@@ -54,13 +54,11 @@ public class Rules {
 
     }
 
-    public void getOption(){
+    private void getOption(){
         Random rand = new Random();
         int arraySize = options.size();
         int index = rand.nextInt(arraySize);
-        String answer = getOptionAtIndex(index);
-        randomGen = answer;
-
+        randomGen = getOptionAtIndex(index);
     }
 
     public String getOptionAtIndex(int index) {
