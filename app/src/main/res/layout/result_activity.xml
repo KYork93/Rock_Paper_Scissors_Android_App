@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result_view"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:onClick="onHomeButtonClicked"
+        android:text="@string/home"
+        android:layout_marginLeft="200dp"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="135dp"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

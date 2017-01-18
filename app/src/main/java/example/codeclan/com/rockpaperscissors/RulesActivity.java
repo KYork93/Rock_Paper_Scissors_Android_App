@@ -1,10 +1,12 @@
 package example.codeclan.com.rockpaperscissors;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -15,11 +17,10 @@ import org.w3c.dom.Text;
 
 public class RulesActivity extends AppCompatActivity{
 
-    TextView instruction;
-    Button rockButton;
-    Button paperButton;
-    Button scissorsButton;
-    TextView resultView;
+    ImageButton rockButton;
+    ImageButton paperButton;
+    ImageButton scissorsButton;
+    Intent intent;
 
 
     @Override
@@ -27,43 +28,49 @@ public class RulesActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        instruction = (TextView)findViewById(R.id.user_instruction);
-        rockButton = (Button)findViewById(R.id.rock_button);
-        paperButton = (Button)findViewById(R.id.paper_button);
-        scissorsButton = (Button)findViewById(R.id.scissors_button);
-        resultView = (TextView)findViewById(R.id.result_view);
+        rockButton = (ImageButton)findViewById(R.id.rock_button);
+        paperButton = (ImageButton)findViewById(R.id.paper_button);
+        scissorsButton = (ImageButton)findViewById(R.id.scissors_button);
+        intent = new Intent(RulesActivity.this, ResultActivity.class);
 
         Log.d(getClass().toString(), "onCreate got called");
     }
 
-    public void onRockButtonPressed(View button){
+    public void onRockButtonPressed(View button) {
         String buttonPressed = "rock";
-        Log.d(getClass().toString(), "rockButtonOnCreate called");
 
         Rules rules = new Rules(buttonPressed);
+        Log.d(getClass().toString(), "rockButtonOnCreate called");
 
         String result = rules.play();
-        resultView.setText(result);
+        intent.putExtra("result", result);
+
+        startActivity(intent);
     }
 
     public void onPaperButtonPressed(View button){
         String buttonPressed = "paper";
-        Log.d(getClass().toString(), "paperButtonOnCreate called");
 
         Rules rules = new Rules(buttonPressed);
+        Log.d(getClass().toString(), "paperButtonOnCreate called");
 
         String result = rules.play();
-        resultView.setText(result);
+        intent.putExtra("result", result);
+
+        startActivity(intent);
     }
 
     public void onScissorButtonPressed(View button){
-        String buttonPressed = "rock";
-        Log.d(getClass().toString(), "scissorButtonOnCreate called");
+        String buttonPressed = "scissors";
 
         Rules rules = new Rules(buttonPressed);
+        Log.d(getClass().toString(), "scissorButtonOnCreate called");
+
 
         String result = rules.play();
-        resultView.setText(result);
+        intent.putExtra("result", result);
+
+        startActivity(intent);
     }
 
 

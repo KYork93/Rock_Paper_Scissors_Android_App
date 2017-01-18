@@ -5,4 +5,5 @@
     <string name="rock_btn">ROCK</string>
     <string name="paper_btn">PAPER</string>
     <string name="scissor_btn">SCISSOR</string>
+    <string name="home">Play Again</string>
 </resources>
